@@ -63,21 +63,11 @@
 				var etSearchStartDate = app.lookup("etSearchStartDate");
 				var etSearchLastDate = app.lookup("etSearchLastDate");
 			
-				var startDate = etSearchStartDate.value;
-				var lastDate = etSearchLastDate.value;
-			
-				if (!startDate || 0 === startDate.length) {
-					startDate = "-1";
-				}
-				if (!lastDate || 0 === lastDate.length) {
-					lastDate = "-1";
-				}
-			
 				var param = {
 					phonenum: etSearchPhonenum.value,
 					text: etText.value,
-					startDate: Number(startDate),
-					lastDate: Number(lastDate)
+					startDate: etSearchStartDate.value,
+					lastDate: etSearchLastDate.value
 				};
 			
 				if (getUserAgent() != "else") {
