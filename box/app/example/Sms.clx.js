@@ -59,17 +59,25 @@
 				var btnSearch = e.control;
 			
 				var etSearchPhonenum = app.lookup("etSearchPhonenum");
-				var etSearchStr = app.lookup("etSearchStr");
-				var etSearchTitle = app.lookup("etSearchTitle");
+				var etText = app.lookup("etText");
 				var etSearchStartDate = app.lookup("etSearchStartDate");
 				var etSearchLastDate = app.lookup("etSearchLastDate");
 			
+				var startDate = etSearchStartDate.value;
+				var lastDate = etSearchLastDate.value;
+			
+				if (!startDate || 0 === startDate.length) {
+					startDate = "-1";
+				}
+				if (!lastDate || 0 === lastDate.length) {
+					lastDate = "-1";
+				}
+			
 				var param = {
 					phonenum: etSearchPhonenum.value,
-					searchStr: etSearchStr.value,
-					title: etSearchTitle.value,
-					startDate: etSearchStartDate.value,
-					lastDate: etSearchLastDate.value
+					text: etText.value,
+					startDate: Number(startDate),
+					lastDate: Number(lastDate)
 				};
 			
 				if (getUserAgent() != "else") {
@@ -206,8 +214,8 @@
 				"height": "25px"
 			});
 			
-			var inputBox_2 = new cpr.controls.InputBox("etSearchStr");
-			inputBox_2.placeholder = "searchStr";
+			var inputBox_2 = new cpr.controls.InputBox("etText");
+			inputBox_2.placeholder = "text";
 			inputBox_2.value = "";
 			container.addChild(inputBox_2, {
 				"top": "75px",
@@ -216,8 +224,8 @@
 				"height": "25px"
 			});
 			
-			var inputBox_3 = new cpr.controls.InputBox("etSearchTitle");
-			inputBox_3.placeholder = "title";
+			var inputBox_3 = new cpr.controls.InputBox("etSearchStartDate");
+			inputBox_3.placeholder = "startDate";
 			inputBox_3.value = "";
 			container.addChild(inputBox_3, {
 				"top": "110px",
@@ -226,21 +234,11 @@
 				"height": "25px"
 			});
 			
-			var inputBox_4 = new cpr.controls.InputBox("etSearchStartDate");
-			inputBox_4.placeholder = "startDate";
+			var inputBox_4 = new cpr.controls.InputBox("etSearchLastDate");
+			inputBox_4.placeholder = "lastDate";
 			inputBox_4.value = "";
 			container.addChild(inputBox_4, {
 				"top": "145px",
-				"left": "10px",
-				"width": "251px",
-				"height": "25px"
-			});
-			
-			var inputBox_5 = new cpr.controls.InputBox("etSearchLastDate");
-			inputBox_5.placeholder = "lastDate";
-			inputBox_5.value = "";
-			container.addChild(inputBox_5, {
-				"top": "180px",
 				"left": "10px",
 				"width": "251px",
 				"height": "25px"
@@ -252,27 +250,27 @@
 				button_2.addEventListener("click", onBtnSearchClick);
 			}
 			container.addChild(button_2, {
-				"top": "215px",
+				"top": "180px",
 				"left": "10px",
 				"width": "251px",
 				"height": "20px"
 			});
 			
-			var inputBox_6 = new cpr.controls.InputBox("etSendPhonenum");
-			inputBox_6.placeholder = "phonenum";
-			inputBox_6.value = "";
-			container.addChild(inputBox_6, {
-				"top": "269px",
+			var inputBox_5 = new cpr.controls.InputBox("etSendPhonenum");
+			inputBox_5.placeholder = "phonenum";
+			inputBox_5.value = "";
+			container.addChild(inputBox_5, {
+				"top": "234px",
 				"left": "10px",
 				"width": "251px",
 				"height": "25px"
 			});
 			
-			var inputBox_7 = new cpr.controls.InputBox("etSendMessage");
-			inputBox_7.placeholder = "message";
-			inputBox_7.value = "";
-			container.addChild(inputBox_7, {
-				"top": "304px",
+			var inputBox_6 = new cpr.controls.InputBox("etSendMessage");
+			inputBox_6.placeholder = "message";
+			inputBox_6.value = "";
+			container.addChild(inputBox_6, {
+				"top": "269px",
 				"left": "10px",
 				"width": "251px",
 				"height": "25px"
@@ -284,7 +282,7 @@
 				button_3.addEventListener("click", onBtnSendSMSClick);
 			}
 			container.addChild(button_3, {
-				"top": "339px",
+				"top": "304px",
 				"left": "10px",
 				"width": "251px",
 				"height": "20px"
@@ -296,7 +294,7 @@
 				button_4.addEventListener("click", onBtnSendSMSUIClick);
 			}
 			container.addChild(button_4, {
-				"top": "369px",
+				"top": "334px",
 				"left": "10px",
 				"width": "251px",
 				"height": "20px"
@@ -308,7 +306,7 @@
 				button_5.addEventListener("click", onBtnStopSMSReceiverClick);
 			}
 			container.addChild(button_5, {
-				"top": "444px",
+				"top": "409px",
 				"left": "10px",
 				"width": "251px",
 				"height": "20px"
@@ -320,7 +318,7 @@
 				button_6.addEventListener("click", onBtnStartSMSReceiverClick);
 			}
 			container.addChild(button_6, {
-				"top": "414px",
+				"top": "379px",
 				"left": "10px",
 				"width": "251px",
 				"height": "20px"
