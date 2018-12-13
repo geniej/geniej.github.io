@@ -372,7 +372,24 @@
 				};
 			
 				OFHistory.go(param);
-			};
+			}
+			
+			/*
+			 * "SMS" 버튼에서 click 이벤트 발생 시 호출.
+			 * 사용자가 컨트롤을 클릭할 때 발생하는 이벤트.
+			 */
+			function onButtonClick9( /* cpr.events.CMouseEvent */ e) {
+				/** 
+				 * @type cpr.controls.Button
+				 */
+				var button = e.control;
+			
+				var param = {
+					url: "app/example/Sms"
+				};
+			
+				OFHistory.go(param);
+			}
 			// End - User Script
 			
 			// Header
@@ -481,9 +498,11 @@
 			
 			var button_8 = new cpr.controls.Button();
 			button_8.value = "SMS";
-			button_8.visible = false;
+			if(typeof onButtonClick9 == "function") {
+				button_8.addEventListener("click", onButtonClick9);
+			}
 			container.addChild(button_8, {
-				"top": "559px",
+				"top": "530px",
 				"left": "20px",
 				"width": "155px",
 				"height": "20px"
@@ -502,128 +521,118 @@
 				"height": "20px"
 			});
 			
-			var button_10 = new cpr.controls.Button();
-			button_10.value = "연락처";
-			button_10.visible = false;
-			container.addChild(button_10, {
-				"top": "589px",
-				"left": "20px",
-				"width": "155px",
-				"height": "20px"
-			});
-			
-			var button_11 = new cpr.controls.Button("btnUserPreferences");
-			button_11.value = "UserPreferences";
+			var button_10 = new cpr.controls.Button("btnUserPreferences");
+			button_10.value = "UserPreferences";
 			if(typeof onBtnUserPreferencesClick == "function") {
-				button_11.addEventListener("click", onBtnUserPreferencesClick);
+				button_10.addEventListener("click", onBtnUserPreferencesClick);
 			}
-			container.addChild(button_11, {
+			container.addChild(button_10, {
 				"top": "140px",
 				"left": "20px",
 				"width": "155px",
 				"height": "20px"
 			});
 			
-			var button_12 = new cpr.controls.Button("btnQrCode");
-			button_12.value = "QR Code";
+			var button_11 = new cpr.controls.Button("btnQrCode");
+			button_11.value = "QR Code";
 			if(typeof onBtnQrCodeClick == "function") {
-				button_12.addEventListener("click", onBtnQrCodeClick);
+				button_11.addEventListener("click", onBtnQrCodeClick);
 			}
-			container.addChild(button_12, {
+			container.addChild(button_11, {
 				"top": "290px",
 				"left": "20px",
 				"width": "155px",
 				"height": "20px"
 			});
 			
-			var button_13 = new cpr.controls.Button("btnBcr");
-			button_13.value = "BCR";
+			var button_12 = new cpr.controls.Button("btnBcr");
+			button_12.value = "BCR";
 			if(typeof onBtnBcrClick == "function") {
-				button_13.addEventListener("click", onBtnBcrClick);
+				button_12.addEventListener("click", onBtnBcrClick);
 			}
-			container.addChild(button_13, {
+			container.addChild(button_12, {
 				"top": "320px",
 				"left": "20px",
 				"width": "155px",
 				"height": "20px"
 			});
 			
-			var button_14 = new cpr.controls.Button();
-			button_14.value = "공인인증서";
+			var button_13 = new cpr.controls.Button();
+			button_13.value = "공인인증서";
 			if(typeof onButtonClick7 == "function") {
-				button_14.addEventListener("click", onButtonClick7);
+				button_13.addEventListener("click", onButtonClick7);
 			}
-			container.addChild(button_14, {
+			container.addChild(button_13, {
 				"top": "350px",
 				"left": "20px",
 				"width": "155px",
 				"height": "20px"
 			});
 			
-			var button_15 = new cpr.controls.Button();
-			button_15.value = "보안키패드";
+			var button_14 = new cpr.controls.Button();
+			button_14.value = "보안키패드";
 			if(typeof onButtonClick8 == "function") {
-				button_15.addEventListener("click", onButtonClick8);
+				button_14.addEventListener("click", onButtonClick8);
 			}
-			container.addChild(button_15, {
+			container.addChild(button_14, {
 				"top": "380px",
 				"left": "20px",
 				"width": "155px",
 				"height": "20px"
 			});
 			
-			var button_16 = new cpr.controls.Button("btnNavigator");
-			button_16.value = "네비게이터 유틸리티";
+			var button_15 = new cpr.controls.Button("btnNavigator");
+			button_15.value = "네비게이터 유틸리티";
 			if(typeof onBtnNavigatorClick == "function") {
-				button_16.addEventListener("click", onBtnNavigatorClick);
+				button_15.addEventListener("click", onBtnNavigatorClick);
 			}
-			container.addChild(button_16, {
+			container.addChild(button_15, {
 				"top": "410px",
 				"left": "20px",
 				"width": "155px",
 				"height": "20px"
 			});
 			
-			var button_17 = new cpr.controls.Button("btnToolbar");
-			button_17.value = "툴바 유틸리티";
+			var button_16 = new cpr.controls.Button("btnToolbar");
+			button_16.value = "툴바 유틸리티";
 			if(typeof onBtnToolbarClick == "function") {
-				button_17.addEventListener("click", onBtnToolbarClick);
+				button_16.addEventListener("click", onBtnToolbarClick);
 			}
-			container.addChild(button_17, {
+			container.addChild(button_16, {
 				"top": "440px",
 				"left": "20px",
 				"width": "155px",
 				"height": "20px"
 			});
 			
-			var button_18 = new cpr.controls.Button("btnLogin");
-			button_18.value = "LOGIN";
+			var button_17 = new cpr.controls.Button("btnLogin");
+			button_17.value = "LOGIN";
 			if(typeof onBtnGNBClick == "function") {
-				button_18.addEventListener("click", onBtnGNBClick);
+				button_17.addEventListener("click", onBtnGNBClick);
 			}
 			if(typeof onBtnLoginClick == "function") {
-				button_18.addEventListener("click", onBtnLoginClick);
+				button_17.addEventListener("click", onBtnLoginClick);
 			}
 			if(typeof onBtnLoginClick3 == "function") {
-				button_18.addEventListener("click", onBtnLoginClick3);
+				button_17.addEventListener("click", onBtnLoginClick3);
 			}
 			if(typeof onBtnLoginClick2 == "function") {
-				button_18.addEventListener("click", onBtnLoginClick2);
+				button_17.addEventListener("click", onBtnLoginClick2);
 			}
-			container.addChild(button_18, {
+			container.addChild(button_17, {
 				"top": "470px",
 				"left": "20px",
 				"width": "155px",
 				"height": "20px"
 			});
 			
-			var button_19 = new cpr.controls.Button("btnAlbums");
-			button_19.value = "이미지업로드(N)";
-			button_19.visible = true;
+			var button_18 = new cpr.controls.Button("btnAlbums");
+			button_18.value = "이미지업로드(N)";
+			button_18.visible = true;
 			if(typeof onBtnAlbumsClick == "function") {
-				button_19.addEventListener("click", onBtnAlbumsClick);
+				button_18.addEventListener("click", onBtnAlbumsClick);
 			}
-			container.addChild(button_19, {
+			container.addChild(button_18, {
 				"top": "500px",
 				"left": "20px",
 				"width": "155px",

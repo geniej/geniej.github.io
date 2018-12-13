@@ -197,24 +197,6 @@ OFPlugin.global.variable.remove = function(callback, params, singleton, callerID
 }
 
 /**
- * 전역데이터 초기화
- * 
- * @param callback
- * @param singleton
- * @param callerID
- */
-OFPlugin.global.variable.clear = function(callback, singleton, callerID) {
-	if (isEmptyValue(callerID)) {
-		callerID = 0;
-	}
-	if (isEmptyValue(singleton)) {
-		singleton = false;
-	}
-
-	OF.exec(callback, "OFGlobalVariables", "clear", callerID, singleton, {});
-}
-
-/**
  * 전역 데이타의 Preference or KeyChain을 관리한다.
  */
 OFPlugin.global.pref = {};
@@ -324,24 +306,6 @@ OFPlugin.global.pref.remove = function(callback, params, singleton, callerID) {
 }
 
 /**
- * Preference or KeyChain 초기화
- * 
- * @param callback
- * @param singleton
- * @param callerID
- */
-OFPlugin.global.pref.clear = function(callback, singleton, callerID) {
-	if (isEmptyValue(callerID)) {
-		callerID = 0;
-	}
-	if (isEmptyValue(singleton)) {
-		singleton = false;
-	}
-
-	OF.exec(callback, "OFUserPreference", "clear", callerID, singleton, {});
-}
-
-/**
  * native device 정보들을 관리한다.
  */
 OFPlugin.device = {};
@@ -407,6 +371,106 @@ OFPlugin.clipboard.getText = function(callback, singleton, callerID) {
 	}
 
 	OF.exec(callback, "OFClipboard", "getText", callerID, singleton, []);
+}
+
+/**
+ * sms 정보들을 관리한다.
+ */
+OFPlugin.sms = {};
+
+/**
+ * SMS 검색하기
+ * 
+ * @param callback
+ * @param params
+ * @param singleton
+ * @param callerID
+ */
+OFPlugin.sms.search = function(callback, params, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFSMS", "search", callerID, singleton, params);
+}
+
+/**
+ * SMS 보내기
+ * 
+ * @param callback
+ * @param params
+ * @param singleton
+ * @param callerID
+ */
+OFPlugin.sms.send = function(callback, params, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFSMS", "sendSMS", callerID, singleton, params);
+}
+
+/**
+ * SMS 보내기
+ * 
+ * @param callback
+ * @param params
+ * @param singleton
+ * @param callerID
+ */
+OFPlugin.sms.sendUI = function(callback, params, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFSMS", "sendSMSUI", callerID, singleton, params);
+}
+
+/**
+ * SMS startReceiver
+ * 
+ * @param callback
+ * @param params
+ * @param singleton
+ * @param callerID
+ */
+OFPlugin.sms.startReceiver = function(callback, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFSMS", "startSMSReceiver", callerID, singleton, {});
+}
+
+/**
+ * SMS stopReceiver
+ * 
+ * @param callback
+ * @param params
+ * @param singleton
+ * @param callerID
+ */
+OFPlugin.sms.stopReceiver = function(callback, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFSMS", "stopSMSReceiver", callerID, singleton, {});
 }
 
 /**
