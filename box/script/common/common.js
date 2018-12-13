@@ -46,8 +46,12 @@ function backPressed(step) {
 		step = -1;
 	}
 
-	if (step == -1) {
-		OFHistory.list(onHistoryBack);
+	if (getUserAgent() != "else") {
+		if (step == -1) {
+			OFHistory.list(onHistoryBack);
+		} else {
+			OFHistory.go(step);
+		}
 	} else {
 		OFHistory.go(step);
 	}
