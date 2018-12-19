@@ -80,8 +80,8 @@
 				button_1.addEventListener("click", onButtonClick);
 			}
 			container.addChild(button_1, {
-				"top": "101px",
-				"left": "21px",
+				"top": "367px",
+				"left": "102px",
 				"width": "100px",
 				"height": "20px"
 			});
