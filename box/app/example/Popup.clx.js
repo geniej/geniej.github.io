@@ -52,7 +52,7 @@
 			
 				var param = {
 					id: "popup",
-					url: "popup.html",
+					url: "https://geniej.github.io/box/popup.html",
 					parameter: {
 						data: "popup test"
 					}
