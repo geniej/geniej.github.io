@@ -50,7 +50,7 @@
 					}
 				};
 			
-				OFPopup.closePopup();
+				OFPopup.closePopup(param);
 			}
 			// End - User Script
 			
