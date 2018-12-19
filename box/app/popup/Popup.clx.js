@@ -80,8 +80,8 @@
 				button_1.addEventListener("click", onButtonClick);
 			}
 			container.addChild(button_1, {
-				"top": "10px",
-				"left": "10px",
+				"top": "101px",
+				"left": "21px",
 				"width": "100px",
 				"height": "20px"
 			});
@@ -89,8 +89,8 @@
 			var textArea_1 = new cpr.controls.TextArea("txa1");
 			textArea_1.value = "1. closePopup : OFPopup.closePopup(callback, param)\n    - callback : 팝업이 닫히고 아래화면에서 실행시킬 함수\n    - class name: OFPopup\n    - function name: openPopup\n    - param : 부모화면에 전달하고 싶은 데이터";
 			container.addChild(textArea_1, {
-				"top": "46px",
-				"left": "9px",
+				"top": "137px",
+				"left": "20px",
 				"width": "276px",
 				"height": "200px"
 			});
