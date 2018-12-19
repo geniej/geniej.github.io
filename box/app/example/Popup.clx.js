@@ -52,7 +52,7 @@
 			
 				var param = {
 					id: "popup",
-					url: "/box/popup.html",
+					url: "popup.html",
 					parameter: {
 						data: "popup test"
 					}
