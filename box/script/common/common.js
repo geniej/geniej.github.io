@@ -42,19 +42,35 @@ onHistoryBack = function(history) {
  * 웹에서 back 시 호출
  */
 function backPressed(step) {
-	if (!step) {
-		step = -1;
-	}
+//	
+//	   try {
+               
+  				if (!step) {
+					step = -1;
+				}
+				
+				if (getUserAgent() != "else") {
+					if (step == -1) {
+						OFHistory.list(onHistoryBack);
+					} else {
+						OFHistory.go(step);
+					}
+				} else {
+					OFHistory.go(step);
+				}
 
-	if (getUserAgent() != "else") {
-		if (step == -1) {
-			OFHistory.list(onHistoryBack);
-		} else {
-			OFHistory.go(step);
-		}
-	} else {
-		OFHistory.go(step);
-	}
+	
+	         
+//    } catch (e) {
+//    
+//        
+//        	alert("***** backPressed  e.message********>"+  e.message);
+//    }
+
+	
+	
+	
+	
 }
 
 /**
@@ -79,6 +95,14 @@ function ofBackPressed() {
  * @param param
  */
 function ofMovePage(param) {
+	
+	
+	
+	 try
+	 {
+	
+	
+	
 	cpr.core.App.load(param.url, function(loadedApp) {
 		if (loadedApp) {
 			var disposeApp;
@@ -124,6 +148,16 @@ function ofMovePage(param) {
 			loadedApp.createNewInstance().run();
 		}
 	});
+	
+	
+	   } catch (e) {
+                  
+                  
+                  alert( e.message ) ;
+       }
+	
+	
+	
 }
 
 /**
