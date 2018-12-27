@@ -18,7 +18,13 @@
 			 * @author ljy
 			 ************************************************/
 			function ofReady(params, direction) {
+				
+				    alert(params);
+				
 				console.log("ofReady param = " + JSON.stringify(params, null, 4) + " / direction = " + direction);
+			
+			   
+			
 			
 			}
 			
@@ -26,7 +32,12 @@
 			 * "이전" 버튼에서 click 이벤트 발생 시 호출.
 			 * 사용자가 컨트롤을 클릭할 때 발생하는 이벤트.
 			 */
-			function onButtonClick( /* cpr.events.CMouseEvent */ e) {
+			function onBackButtonClick( /* cpr.events.CMouseEvent */ e) {
+				  
+				  
+			
+				
+				
 				/** 
 				 * @type cpr.controls.Button
 				 */
@@ -39,7 +50,7 @@
 			 * "webview1 호출" 버튼에서 click 이벤트 발생 시 호출.
 			 * 사용자가 컨트롤을 클릭할 때 발생하는 이벤트.
 			 */
-			function onButtonClick2( /* cpr.events.CMouseEvent */ e) {
+			function onHistory2Click( /* cpr.events.CMouseEvent */ e) {
 				/** 
 				 * @type cpr.controls.Button
 				 */
@@ -83,24 +94,36 @@
 			// UI Configuration
 			var button_1 = new cpr.controls.Button();
 			button_1.value = "이전";
-			if(typeof onButtonClick == "function") {
-				button_1.addEventListener("click", onButtonClick);
+			if(typeof onBackButtonClick == "function") {
+				button_1.addEventListener("click", onBackButtonClick);
 			}
 			container.addChild(button_1, {
-				"top": "8px",
-				"left": "6px",
+				"top": "50px",
+				"left": "20px",
 				"width": "100px",
 				"height": "20px"
 			});
 			
 			var button_2 = new cpr.controls.Button();
 			button_2.value = "history 2 호출";
-			if(typeof onButtonClick2 == "function") {
-				button_2.addEventListener("click", onButtonClick2);
+			if(typeof onHistory2Click == "function") {
+				button_2.addEventListener("click", onHistory2Click);
 			}
 			container.addChild(button_2, {
-				"top": "57px",
-				"left": "6px",
+				"top": "99px",
+				"left": "20px",
+				"width": "100px",
+				"height": "20px"
+			});
+			
+			var inputBox_1 = new cpr.controls.InputBox("ipb3");
+			inputBox_1.value = "HIstory";
+			inputBox_1.style.css({
+				"text-align" : "center"
+			});
+			container.addChild(inputBox_1, {
+				"top": "10px",
+				"left": "10px",
 				"width": "100px",
 				"height": "20px"
 			});

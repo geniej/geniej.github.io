@@ -84,7 +84,7 @@
 				button_1.addEventListener("click", onButtonClick);
 			}
 			container.addChild(button_1, {
-				"top": "20px",
+				"top": "78px",
 				"left": "20px",
 				"width": "100px",
 				"height": "20px"
@@ -96,8 +96,17 @@
 				button_2.addEventListener("click", onButtonClick2);
 			}
 			container.addChild(button_2, {
-				"top": "60px",
+				"top": "118px",
 				"left": "20px",
+				"width": "100px",
+				"height": "20px"
+			});
+			
+			var inputBox_1 = new cpr.controls.InputBox("ipb2");
+			inputBox_1.value = "HIstory3";
+			container.addChild(inputBox_1, {
+				"top": "10px",
+				"left": "10px",
 				"width": "100px",
 				"height": "20px"
 			});

@@ -20,7 +20,7 @@
 			 * "history 3 호출" 버튼에서 click 이벤트 발생 시 호출.
 			 * 사용자가 컨트롤을 클릭할 때 발생하는 이벤트.
 			 */
-			function onButtonClick( /* cpr.events.CMouseEvent */ e) {
+			function onBackButtonClick( /* cpr.events.CMouseEvent */ e) {
 				/** 
 				 * @type cpr.controls.Button
 				 */
@@ -33,7 +33,7 @@
 			 * "history 3 호출" 버튼에서 click 이벤트 발생 시 호출.
 			 * 사용자가 컨트롤을 클릭할 때 발생하는 이벤트.
 			 */
-			function onButtonClick2( /* cpr.events.CMouseEvent */ e) {
+			function onButtonHistory3Click( /* cpr.events.CMouseEvent */ e) {
 				/** 
 				 * @type cpr.controls.Button
 				 */
@@ -53,6 +53,31 @@
 			function onBodyLoad( /* cpr.events.CEvent */ e) {
 				setNowPage(app);
 			}
+			
+			/*
+			 * "history 3 호출" 버튼에서 click 이벤트 발생 시 호출.
+			 * 사용자가 컨트롤을 클릭할 때 발생하는 이벤트.
+			 */
+			//function onButtonClick(/* cpr.events.CMouseEvent */ e){
+			//	/** 
+			//	 * @type cpr.controls.Button
+			//	 */
+			//	var button = e.control;
+			//	
+			//}
+			
+			
+			/*
+			 * "history 3 호출" 버튼에서 click 이벤트 발생 시 호출.
+			 * 사용자가 컨트롤을 클릭할 때 발생하는 이벤트.
+			 */
+			//function onButtonClick2(/* cpr.events.CMouseEvent */ e){
+			//	/** 
+			//	 * @type cpr.controls.Button
+			//	 */
+			//	var button = e.control;
+			//	
+			//};
 			// End - User Script
 			
 			// Header
@@ -76,27 +101,36 @@
 			// UI Configuration
 			var button_1 = new cpr.controls.Button();
 			button_1.value = "이전 1";
-			if(typeof onButtonClick == "function") {
-				button_1.addEventListener("click", onButtonClick);
+			if(typeof onBackButtonClick == "function") {
+				button_1.addEventListener("click", onBackButtonClick);
 			}
 			container.addChild(button_1, {
-				"top": "10px",
-				"left": "10px",
+				"top": "53px",
+				"left": "20px",
 				"width": "100px",
 				"height": "20px"
 			});
 			
 			var button_2 = new cpr.controls.Button();
 			button_2.value = "history 3 호출";
-			if(typeof onButtonClick == "function") {
-				button_2.addEventListener("click", onButtonClick);
+			if(typeof onButtonHistory3Click == "function") {
+				button_2.addEventListener("click", onButtonHistory3Click);
 			}
 			if(typeof onButtonClick2 == "function") {
 				button_2.addEventListener("click", onButtonClick2);
 			}
 			container.addChild(button_2, {
-				"top": "57px",
-				"left": "10px",
+				"top": "100px",
+				"left": "20px",
+				"width": "100px",
+				"height": "20px"
+			});
+			
+			var inputBox_1 = new cpr.controls.InputBox("ipb1");
+			inputBox_1.value = "HIstory2";
+			container.addChild(inputBox_1, {
+				"top": "12px",
+				"left": "38px",
 				"width": "100px",
 				"height": "20px"
 			});
