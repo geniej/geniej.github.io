@@ -97,6 +97,23 @@ function ofBackPressed() {
 function ofMovePage(param) {
 	
 	
+
+   var movePage = param.url;
+
+	    if(movePage.indexOf("html") != -1 ) {
+		    
+		    
+	        movePage = movePage;
+	        
+	       //alert("html++++"+movePage  );
+
+         window.location = movePage;
+
+    
+	 }
+	 else {
+
+	
 	
 	 try
 	 {
@@ -140,6 +157,7 @@ function ofMovePage(param) {
 					disposeApp = cpr.core.Platform.INSTANCE.lookupByUUID(uuid);
 				}
 			}
+			
 
 			if (disposeApp) {
 				disposeApp.dispose();
@@ -156,7 +174,7 @@ function ofMovePage(param) {
                   alert( e.message ) ;
        }
 	
-	
+	}
 	
 }
 

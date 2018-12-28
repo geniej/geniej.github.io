@@ -37,7 +37,7 @@
 				 */
 				var button = e.control;
 			
-			  		 alert("히스토리 테스트 ");
+			  		//  alert("히스토리 테스트 ");
 			
 			
 				var param = {
