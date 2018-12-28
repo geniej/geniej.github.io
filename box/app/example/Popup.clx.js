@@ -53,6 +53,7 @@
 				var param = {
 					id: "popup",
 					url: "https://geniej.github.io/box/popup.html",
+			//		url: "http://54.180.106.236:8080/ibk/popup.html",
 					parameter: {
 						data: "popup test"
 					}
@@ -66,7 +67,10 @@
 			 * 앱이 최초 구성된후 최초 랜더링 직후에 발생하는 이벤트 입니다.
 			 */
 			function onBodyLoad( /* cpr.events.CEvent */ e) {
-				setNowPage(app);
+				
+				//setNowPage(app);
+				
+				
 			}
 			// End - User Script
 			
