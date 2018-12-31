@@ -109,10 +109,10 @@
 .cl-calendar .cl-calendar-header .cl-calendar-header-next {
   /* 캘린더 다음 달 버튼 */
 }
-.cl-calendar:not(.cl-disabled) .cl-calendar-content-day:hover,
-.cl-calendar:not(.cl-disabled) .cl-calendar-content-month:hover,
-.cl-calendar:not(.cl-disabled) .cl-calendar-content-year:hover,
-.cl-calendar:not(.cl-disabled) .cl-other-month:hover {
+.cl-calendar:not(.cl-disabled) .cl-calendar-content-day:not(.cl-disabled):hover,
+.cl-calendar:not(.cl-disabled) .cl-calendar-content-month:not(.cl-disabled):hover,
+.cl-calendar:not(.cl-disabled) .cl-calendar-content-year:not(.cl-disabled):hover,
+.cl-calendar:not(.cl-disabled) .cl-other-month:not(.cl-disabled):hover {
   /* 셀 호버 스타일 */
 }
 .cl-calendar:not(.cl-disabled) .cl-calendar-content-day.cl-selected,
@@ -160,6 +160,8 @@
   /* 아이템 목록 박스 내 각 아이템 */
 }
 .cl-listbox .cl-listbox-list .cl-listbox-item {
+  /* 아이템 드래그시 아이템의 마우스가 아래에 위치할때 표시 */
+  /* 아이템 드래그시 아이템의 마우스가 위에 위치할때 표시 */
   /* 선탹된 아이템 */
   /* 아이템 텍스트 */
 }
@@ -193,6 +195,7 @@
   font: 11pt sans-serif;
   color: #333;
   /* 리스트 박스 */
+  /* 링크드리스트박스 disabled 상태*/
 }
 .cl-linkedlistbox .cl-linkedlistbox-listbox {
   /* 리스트 박스 헤더 */
@@ -207,6 +210,8 @@
   /* 리스트 박스 리스트 아이템 */
 }
 .cl-linkedlistbox .cl-linkedlistbox-listbox .cl-linkedlistbox-list .cl-linkedlistbox-item {
+  /* 아이템 드래그시 아이템의 마우스가 아래에 위치할때 표시 */
+  /* 아이템 드래그시 아이템의 마우스가 위에 위치할때 표시 */
   /* 리스트 박스 리스트 아이템 텍스트 */
   /* 리스트 박스 리스트 아이템 리프 아이콘 */
   /* 리스트 박스 리스트 아이템 드릴다운 아이콘 */
@@ -351,6 +356,7 @@
   border-radius: 4px;
   border: solid 1px #959697;
   text-shadow: 0px 1px 0px white;
+  /* 텍스트 스타일 */
   /* 버튼위에 마우스를 올렸을 때의 스타일 */
   /* 버튼이 포커스를 가졌을 때의 스타일 */
   /* 버튼을 클릭했을 때의 스타일 */
@@ -362,7 +368,7 @@
 .cl-button.cl-focus {
   border: solid 1px #1369C5;
 }
-.cl-button:not(.cl-disabled).cl-active,
+.cl-button:not(.cl-disabled).cl-activated,
 .cl-button:not(.cl-disabled):active {
   background-image: linear-gradient(#ddd, #eee 5px, #ddd);
 }
@@ -665,16 +671,8 @@
   /* 콤보 박스 인풋 텍스트 */
   /* 콤보 박스 펼침 버튼 */
 }
-.cl-linkedcombobox.cl-focus .cl-linkedcombobox-combo {
-  border-color: #1369C5;
-}
 .cl-linkedcombobox.cl-disabled {
   /* 콤보 박스 펼침 버튼 - disabled 상태 */
-}
-.cl-linkedcombobox.cl-disabled .cl-linkedcombobox-combo {
-  border-color: #ddd;
-  background-color: #ccc;
-  color: #333;
 }
 /* 콤보 박스 리스트 박스 */
 .cl-linkedcombobox-list {
@@ -776,6 +774,9 @@
 }
 .cl-tree:not(.cl-disabled) .cl-tree-item:not(.cl-disabled) {
   /* 트리 아이템 - hover */
+  /* 드래그 아이템 위치에 따른 표시 */
+  /* 드래그 아이템 위치에 따른 표시 */
+  /* 드래그 아이템 위치에 따른 표시 */
 }
 .cl-tree:not(.cl-disabled) .cl-tree-item:not(.cl-disabled):not(.cl-selected).cl-hover,
 .cl-tree:not(.cl-disabled) .cl-tree-item:not(.cl-disabled):not(.cl-selected):hover {
@@ -925,6 +926,31 @@
 .cl-gridfilter .cl-filterdlg .cl-filterdlg-buttons .cl-button {
   /* 필터 다이얼로그 - 버튼 영역의 확인 버튼 스타일 */
   /* 필터 다이얼로그 - 버튼 영역의 취소 버튼 스타일 */
+}
+/* 트리셀 */
+.cl-treecell {
+  /* 트리셀 안에 트리 아이템 (트리셀에서 트리구조가 시작되는 영역) */
+  /* 트리셀 - focus */
+}
+.cl-treecell .cl-treecell-item {
+  /* 트리 아이템이 펼치고 접혀지는 아이콘 영역 */
+  /* 트리 아이템의 아이콘 영역 */
+  /* 트리 아이템의 텍스트 */
+  /* 폴더형 트리 아이템 */
+  /* 트리 아이템 - disabled */
+}
+.cl-treecell .cl-treecell-item .cl-text {
+  /* 트리 아이템의 인풋 영역 */
+}
+.cl-treecell .cl-treecell-item.cl-folder {
+  /* 폴더형 트리 아이템의 아이콘 영역 */
+  /* 폴더형 트리 아이템이 펼쳐졌을 때 펼치고 접혀지는 아이콘 영역 */
+  /* 폴더형 트리 아이템이 접혀졌을 때 펼치고 접혀지는 아이콘 영역 */
+}
+/* 트리셀이 enabled이고, 트리 아이템이 enabled일때 스타일 */
+/* 트리셀 - disabled */
+.cl-treecell.cl-disabled {
+  /* 트리셀 - disabled 의 트리 아이템 - selected */
 }
 /* 네비게이션 바 */
 .cl-navigationbar {
@@ -1189,7 +1215,10 @@
  폼 레이아웃
  **********************************/
 .cl-formlayout-column-shade {
-  /* 컬럼 음역 스타일 */
+  /* 컬럼 음영 스타일 */
+}
+.cl-formlayout-row-shade {
+  /* 행 음영 스타일 */
 }
 .cl-formlayout-vertical-separator,
 .cl-formlayout-horizontal-separator {

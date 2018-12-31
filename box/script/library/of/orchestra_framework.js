@@ -20,6 +20,7 @@
  * 단, 업무화면의 스크립트내에 'ofReady' 함수가 존재하여야 함.
  * 
  */
+ /*
 document.addEventListener("DOMContentLoaded",
     function () {
         OFHistory.list(function(result) {
@@ -34,6 +35,25 @@ document.addEventListener("DOMContentLoaded",
         });
     }
 );
+* 
+* */
+
+
+document.addEventListener("onLoad",
+    function () {
+        OFHistory.list(function(result) {
+            if (result.resultCode == 0) {
+                var historyObject = result.result;
+                if (historyObject) {
+                    if(typeof ofReady != "undefined") {
+                        ofReady(historyObject.list[historyObject.index], historyObject.direction);
+                    }
+                }
+            }
+        });
+    }
+);
+
 
 
 /**
@@ -294,8 +314,10 @@ OFHistory = {};
  */
 OFHistory.go = function( params, singleton, callerID ) {
 
-    if (getUserAgent() != "else") {
-
+    if (getUserAgent() != "else") {  // 폰 
+    
+      
+         
         var sendParam = {};
         if (typeof(params) == "number") {
             sendParam.step = params
@@ -309,7 +331,11 @@ OFHistory.go = function( params, singleton, callerID ) {
         if (isEmptyValue(singleton)){
             singleton = false;
         }
+        
         OF.exec(null, "OFHistory", "go", callerID, singleton, sendParam);
+        
+        
+        
     } else {
         var history = localStorage.getItem("history");
         if (typeof(params) == "number") {

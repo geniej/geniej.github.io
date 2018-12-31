@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Expires" content="-1">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="No-Cache">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<script type="text/javascript" src="./runtime/cleopatra.js"></script>
+		<script type="text/javascript" src="./cpr-lib/language.js"></script>
+		<!-- script type="text/javascript" src="cpr-lib/user-modules.js"></script-->
+		<!-- script type="text/javascript" src="./cpr-lib/udc.js"></script-->
+			
+		<!-- 		<script type="text/javascript" src="app/Index.clx.js"></script> -->
+		<script type="text/javascript" src="app/sub/LB.clx.js"></script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="./runtime/css/cleopatra.css">
+		<link rel="stylesheet" type="text/css" href="./theme/cleopatra-theme.css">
+		<script type="text/javascript" src="./script/common/common.js"></script>
+		<script type="text/javascript" src="./script/common/httpClient.js"></script>
+		<script type="text/javascript" src="./script/common/pluginCommon.js"></script>
+		<script type="text/javascript" src="./script/common/utilCommon.js"></script>
+		<script type="text/javascript" src="./script/library/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="./script/library/of/orchestra_framework.js"></script>
+		<style>
+			/* for HTML5 */
+			html, body {
+				height: 100%;
+				margin: 0px;
+				padding: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+ 			var app = cpr.core.Platform.INSTANCE.lookup("app/sub/LB");
+			 app.createNewInstance().run();
+		</script>
+	</body>
+</html>
