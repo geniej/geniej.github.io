@@ -23,12 +23,23 @@
 			
 			}
 			
+			onToolbarCallback = function(result) {
+				console.log("onToolbarCallback = " + JSON.stringify(result));
+			};
+			
+			onNavigatorCallback = function(result) {
+				console.log("onNavigatorCallback = " + JSON.stringify(result));
+			};
+			
 			/*
 			 * Body에서 load 이벤트 발생 시 호출.
 			 * 앱이 최초 구성된후 최초 랜더링 직후에 발생하는 이벤트 입니다.
 			 */
 			function onBodyLoad( /* cpr.events.CEvent */ e) {
 				setNowPage(app);
+			
+				hideToolbar();
+				hideNavigator();
 			}
 			
 			/*
@@ -42,6 +53,37 @@
 				var button = e.control;
 			
 				backPressed();
+			}
+			
+			/**
+			 * toolbar 숨김
+			 */
+			function hideToolbar() {
+				var param = {
+					'type': 0
+				};
+			
+				if (getUserAgent() != "else") {
+					OFPlugin.menu.callToolbar(onToolbarCallback, param);
+				} else {
+					alert("지원안함");
+				}
+			}
+			
+			/**
+			 * navigator 숨김
+			 */
+			function hideNavigator() {
+				var param = {
+					'type': 0,
+					'title': ""
+				};
+			
+				if (getUserAgent() != "else") {
+					OFPlugin.menu.callNavigator(onNavigatorCallback, param);
+				} else {
+					alert("지원안함");
+				}
 			}
 			// End - User Script
 			
