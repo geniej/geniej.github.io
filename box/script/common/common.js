@@ -107,9 +107,9 @@ function ofMovePage(param) {
 	        
 	       //alert("html++++"+movePage  );
 
-        //  window.location = movePage;
+         window.location = movePage;
 
-		window.location = "https://www.naver.com";
+    
 	 }
 	 else {
 
