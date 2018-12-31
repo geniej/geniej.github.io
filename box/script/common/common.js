@@ -107,9 +107,11 @@ function ofMovePage(param) {
 	        
 	       //alert("html++++"+movePage  );
 
-         window.location = movePage;
+        //  window.location = movePage;
 
-    
+         window.location = "/index.html";
+	
+		 
 	 }
 	 else {
 
