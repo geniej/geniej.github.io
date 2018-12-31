@@ -107,7 +107,7 @@ function ofMovePage(param) {
 	        
 	       //alert("html++++"+movePage  );
 
-         window.location = movePage;
+         window.location.replace = movePage;
 
     
 	 }
