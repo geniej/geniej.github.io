@@ -42,22 +42,30 @@ onHistoryBack = function(history) {
  * 웹에서 back 시 호출
  */
 function backPressed(step) {
+	if (!step) {
+		step = -1;
+	}
+
+	OFHistory.go(step);
+
+
+
 //	
 //	   try {
                
-  				if (!step) {
-					step = -1;
-				}
+  				// if (!step) {
+				// 	step = -1;
+				// }
 				
-				if (getUserAgent() != "else") {
-					if (step == -1) {
-						OFHistory.list(onHistoryBack);
-					} else {
-						OFHistory.go(step);
-					}
-				} else {
-					OFHistory.go(step);
-				}
+				// if (getUserAgent() != "else") {
+				// 	if (step == -1) {
+				// 		OFHistory.list(onHistoryBack);
+				// 	} else {
+				// 		OFHistory.go(step);
+				// 	}
+				// } else {
+				// 	OFHistory.go(step);
+				// }
 
 	
 	         
@@ -83,8 +91,10 @@ function ofBackPressed() {
 
 	//	OFHistory.listAll(onHistoryListAll);
 
-	OFHistory.list(onHistoryList);
+	// OFHistory.list(onHistoryList);
 
+
+	OFHistory.go(-1);
 }
 
 /**
