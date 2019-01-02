@@ -19,7 +19,7 @@
  * @param history
  */
 onHistoryList = function(history) {
-	if (history.result.index > 1) {
+	if (history.result.index > 0) {
 		OFHistory.go(-1);
 	} else {
 		OFHistory.go(-2);
@@ -33,7 +33,7 @@ onHistoryList = function(history) {
  * @param history
  */
 onHistoryBack = function(history) {
-	if (history.result.index > 1) {
+	if (history.result.index > 0) {
 		OFHistory.go(-1);
 	}
 };
