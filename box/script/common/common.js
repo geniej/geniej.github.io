@@ -19,7 +19,7 @@
  * @param history
  */
 onHistoryList = function(history) {
-	if (history.result.index > 0) {
+	if (history.result.index > 1) {
 		OFHistory.go(-1);
 	} else {
 		OFHistory.go(-2);
@@ -33,7 +33,7 @@ onHistoryList = function(history) {
  * @param history
  */
 onHistoryBack = function(history) {
-	if (history.result.index > 0) {
+	if (history.result.index > 1) {
 		OFHistory.go(-1);
 	}
 };
@@ -42,30 +42,22 @@ onHistoryBack = function(history) {
  * 웹에서 back 시 호출
  */
 function backPressed(step) {
-	if (!step) {
-		step = -1;
-	}
-
-	OFHistory.go(step);
-
-
-
 //	
 //	   try {
                
-  				// if (!step) {
-				// 	step = -1;
-				// }
+  				if (!step) {
+					step = -1;
+				}
 				
-				// if (getUserAgent() != "else") {
-				// 	if (step == -1) {
-				// 		OFHistory.list(onHistoryBack);
-				// 	} else {
-				// 		OFHistory.go(step);
-				// 	}
-				// } else {
-				// 	OFHistory.go(step);
-				// }
+				if (getUserAgent() != "else") {
+					if (step == -1) {
+						OFHistory.list(onHistoryBack);
+					} else {
+						OFHistory.go(step);
+					}
+				} else {
+					OFHistory.go(step);
+				}
 
 	
 	         
@@ -91,10 +83,8 @@ function ofBackPressed() {
 
 	//	OFHistory.listAll(onHistoryListAll);
 
-	// OFHistory.list(onHistoryList);
+	OFHistory.list(onHistoryList);
 
-
-	OFHistory.go(-1);
 }
 
 /**
@@ -118,7 +108,7 @@ function ofMovePage(param) {
 	       //alert("html++++"+movePage  );
 
          window.location = movePage;
-// window.location = "/box/index.html";
+
     
 	 }
 	 else {

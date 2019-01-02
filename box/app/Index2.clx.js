@@ -393,6 +393,37 @@
 			
 				OFHistory.go(param);
 			}
+			
+			/*
+			 * "<" 버튼에서 click 이벤트 발생 시 호출.
+			 * 사용자가 컨트롤을 클릭할 때 발생하는 이벤트.
+			 */
+			function onHomeClick10(/* cpr.events.CMouseEvent */ e){
+				/** 
+				 * @type cpr.controls.Button
+				 */
+				 
+			 	 
+				var button = e.control;
+				
+				//	OFHistory.go (-1);
+				
+				  var param = {
+			            id : "home",
+			            callbackFunction : "closePopupCallback",
+			            callbackTargetID : "contents",
+			            callbackParameter : {
+			                "1234" : "asdf"
+			            }
+			        };
+			
+			        OFPopup.closePopup(param);
+			        
+			        
+			
+				
+				
+			};
 			// End - User Script
 			
 			// Header
@@ -404,7 +435,9 @@
 			// Configure root container
 			var container = app.getContainer();
 			container.style.css({
+				"color" : "#f18f8f",
 				"width" : "100%",
+				"background-color" : "#ef5f5f",
 				"top" : "0px",
 				"height" : "100%",
 				"left" : "0px"
@@ -421,8 +454,8 @@
 				button_1.addEventListener("click", onButtonClick2);
 			}
 			container.addChild(button_1, {
-				"top": "20px",
-				"left": "20px",
+				"top": "40px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -433,8 +466,8 @@
 				button_2.addEventListener("click", onButtonClick6);
 			}
 			container.addChild(button_2, {
-				"top": "50px",
-				"left": "20px",
+				"top": "70px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -445,8 +478,8 @@
 				button_3.addEventListener("click", onButtonClick);
 			}
 			container.addChild(button_3, {
-				"top": "80px",
-				"left": "20px",
+				"top": "100px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -457,8 +490,8 @@
 				button_4.addEventListener("click", onButtonClick3);
 			}
 			container.addChild(button_4, {
-				"top": "110px",
-				"left": "20px",
+				"top": "130px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -469,8 +502,8 @@
 				button_5.addEventListener("click", onBtnSystemInfoClick);
 			}
 			container.addChild(button_5, {
-				"top": "170px",
-				"left": "20px",
+				"top": "190px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -481,8 +514,8 @@
 				button_6.addEventListener("click", onButtonClick5);
 			}
 			container.addChild(button_6, {
-				"top": "200px",
-				"left": "20px",
+				"top": "220px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -493,8 +526,8 @@
 				button_7.addEventListener("click", onButtonClick4);
 			}
 			container.addChild(button_7, {
-				"top": "230px",
-				"left": "20px",
+				"top": "250px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -505,8 +538,8 @@
 				button_8.addEventListener("click", onButtonClick9);
 			}
 			container.addChild(button_8, {
-				"top": "530px",
-				"left": "20px",
+				"top": "550px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -518,8 +551,8 @@
 				button_9.addEventListener("click", onBtnCameraClick);
 			}
 			container.addChild(button_9, {
-				"top": "260px",
-				"left": "20px",
+				"top": "280px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -530,8 +563,8 @@
 				button_10.addEventListener("click", onBtnUserPreferencesClick);
 			}
 			container.addChild(button_10, {
-				"top": "140px",
-				"left": "20px",
+				"top": "160px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -542,8 +575,8 @@
 				button_11.addEventListener("click", onBtnQrCodeClick);
 			}
 			container.addChild(button_11, {
-				"top": "290px",
-				"left": "20px",
+				"top": "310px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -554,8 +587,8 @@
 				button_12.addEventListener("click", onBtnBcrClick);
 			}
 			container.addChild(button_12, {
-				"top": "320px",
-				"left": "20px",
+				"top": "340px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -566,8 +599,8 @@
 				button_13.addEventListener("click", onButtonClick7);
 			}
 			container.addChild(button_13, {
-				"top": "350px",
-				"left": "20px",
+				"top": "370px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -578,8 +611,8 @@
 				button_14.addEventListener("click", onButtonClick8);
 			}
 			container.addChild(button_14, {
-				"top": "380px",
-				"left": "20px",
+				"top": "400px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -590,8 +623,8 @@
 				button_15.addEventListener("click", onBtnNavigatorClick);
 			}
 			container.addChild(button_15, {
-				"top": "410px",
-				"left": "20px",
+				"top": "430px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -602,8 +635,8 @@
 				button_16.addEventListener("click", onBtnToolbarClick);
 			}
 			container.addChild(button_16, {
-				"top": "440px",
-				"left": "20px",
+				"top": "460px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -623,8 +656,8 @@
 				button_17.addEventListener("click", onBtnLoginClick2);
 			}
 			container.addChild(button_17, {
-				"top": "470px",
-				"left": "20px",
+				"top": "490px",
+				"left": "87px",
 				"width": "155px",
 				"height": "20px"
 			});
@@ -636,9 +669,21 @@
 				button_18.addEventListener("click", onBtnAlbumsClick);
 			}
 			container.addChild(button_18, {
-				"top": "500px",
-				"left": "20px",
+				"top": "520px",
+				"left": "87px",
 				"width": "155px",
+				"height": "20px"
+			});
+			
+			var button_19 = new cpr.controls.Button();
+			button_19.value = "메인화면입니다.";
+			if(typeof onHomeClick10 == "function") {
+				button_19.addEventListener("click", onHomeClick10);
+			}
+			container.addChild(button_19, {
+				"top": "10px",
+				"left": "46px",
+				"width": "257px",
 				"height": "20px"
 			});
 			if(typeof onBodyInit == "function"){

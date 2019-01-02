@@ -17,8 +17,19 @@
 			 *
 			 * @author ljy
 			 ************************************************/
+			 
+			// 
+			 	 openBoxLoaded_1 = function(){
+							
+							alert("openBoxLoaded_1 ");
+						};
+						
+			 
 			
 			function ofReady(params, direction) {
+				
+				  	alert(params);
+				
 				console.log("ofReady param = " + JSON.stringify(params, null, 4) + " / direction = " + direction);
 			
 			}
@@ -36,10 +47,17 @@
 			 * 앱이 최초 구성된후 최초 랜더링 직후에 발생하는 이벤트 입니다.
 			 */
 			function onBodyLoad( /* cpr.events.CEvent */ e) {
+				
+				alert("-----2323232-----");
+				
+				openBoxLoaded();
+				
+				openBoxLoaded_1();
+				
 				setNowPage(app);
-			
 				hideToolbar();
 				hideNavigator();
+				
 			}
 			
 			/*
