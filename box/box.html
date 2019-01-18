@@ -10,8 +10,7 @@
         let isIPAD = (userAgent.match('iPad') != null);
         let isANDROID = (userAgent.match('Android') != null);
 
-        let _APP_INSTALL_URL_IOS = "http://itunes.apple.com/kr/app/id393499958?mt=8";
-        let _APP_INSTALL_URL_ANDROID = "http://m.androidapp.naver.com/naverapp";
+        let IOS_MARKET_URL = "http://itunes.apple.com/kr/app/id393499958?mt=8";
         let ANDROID_MARKET_URL = "https://play.google.com/store/apps/details?id=com.ibk.boxp";
 
         function executeApp() {
@@ -20,7 +19,7 @@
 
                 setTimeout(function() {
                     if ((new Date()).getTime() - visitedAt < 2000) {
-                        location.href = "{마켓 주소}";
+                        location.href = IOS_MARKET_URL;
                     }
                 }, 500);
 
