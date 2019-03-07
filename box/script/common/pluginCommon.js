@@ -624,6 +624,30 @@ OFPlugin.cert.getVIDCheck = function(callback, params, singleton, callerID) {
 	OF.exec(callback, "OFCertCenter", "getVIDCheck", callerID, singleton, params);
 }
 
+
+OFPlugin.cert.getList = function(callback, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFCertCenter", "getList", callerID, singleton, {});
+}
+
+OFPlugin.cert.getData = function(callback, params, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFCertCenter", "getData", callerID, singleton, params);
+}
+
+
 /**
  * 키패드
  */
