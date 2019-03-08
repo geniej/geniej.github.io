@@ -31,11 +31,12 @@
     */
     function getData() {
         var param = {
-		'policy': '은행법인',
-		'subject_dn': 'cn=웹케시글로벌(webcashglobal)0004023B004413485,ou=webcashglobal,ou=KMB,ou=corporation,o=yessign,c=kr',
-		'issuer_org': 'yessign',
-		'not_after_date': '2019.07.27',
-		'expired': 1
+            'policy': '은행개인',
+            'subject_cn': '정민구(jung min gu)0004041H006464719',
+            'subject_dn': 'cn=정민구(jung min gu)0004041H006464719,ou=KMB,ou=personal4IB,o=yessign,c=kr',
+            'issuer_org': 'yessign',
+            'not_after_date': '2019.04.27',
+            'expired': 1
 	};
 
         OFPlugin.cert.getData(onCallback, param);
