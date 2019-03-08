@@ -42,12 +42,28 @@
     }
 
 
+    /*
+    * 키보드
+    */
+    function showPassword() {
+        var param = {
+		'type': '1',
+		'title': '비밀번호',
+		'min': 8,
+		'max': 20
+	};
+
+    OFPlugin.keypad.getSecPad(onCallback, param);
+    }
+
     </script>
    
    
 </head>
 <body>
     <a href="" onclick="getList();return false;">getList</a>
+    <br>
+    <a href="" onclick="showPassword();return false;">password</a>
     <br>
     <a href="" onclick="getData();return false;">getData</a>
 </body>
