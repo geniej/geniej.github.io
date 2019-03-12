@@ -44,6 +44,14 @@
 
 
     /*
+    * 콜백 함수
+    */
+    onCallback = function(result) {
+        alert("onCallback = " + JSON.stringify(result));
+        alert("onCallback = " + JSON.stringify(result.result));       
+    };
+    
+    /*
     * 키보드
     */
     function showPassword() {
