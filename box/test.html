@@ -73,6 +73,17 @@
     OFPlugin.keypad.getSecPad(onCallback, param);
     }
 
+    /*
+    * 서명
+    */
+    function getSign() {
+        var param = {
+		'type': '0',
+		'value': '1234'
+	};
+
+    OFPlugin.cert.getSign(onCallback, param);
+    }
     </script>
    
    
@@ -88,6 +99,9 @@
     <br>
     <br>
     <a href="" onclick="getData();return false;">getData</a>
+    <br>
+    <br>
+    <a href="" onclick="getSign();return false;">getSign</a>
     <br>
     <br>
     <a href="login.html">login</a>
