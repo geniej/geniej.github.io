@@ -712,3 +712,19 @@ OFPlugin.menu.setToolbar = function(callback, params, singleton, callerID) {
 
 	OF.exec(callback, "OFIBKToolbar", "setToolbar", callerID, singleton, params);
 }
+
+/**
+ * ibk util
+ */
+OFPlugin.Utils = {};
+
+OFPlugin.Utils.callCardList = function(callback, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFIBKUtil", "callCardList", callerID, singleton, {});
+}
