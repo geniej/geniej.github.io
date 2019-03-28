@@ -613,6 +613,17 @@ OFPlugin.cert.getSign = function(callback, params, singleton, callerID) {
 	OF.exec(callback, "OFCertCenter", "getSign", callerID, singleton, params);
 }
 
+OFPlugin.cert.getSignDetached = function(callback, params, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFCertCenter", "getSignDetached", callerID, singleton, params);
+}
+
 OFPlugin.cert.getVIDCheck = function(callback, params, singleton, callerID) {
 	if (isEmptyValue(callerID)) {
 		callerID = 0;

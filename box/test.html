@@ -82,6 +82,18 @@
         OFPlugin.cert.getSign(onCallback, param);
     }
 
+    /*
+    * 서명
+    */
+    function getSignDetached() {
+        var param = {
+		    'type': '0',
+		    'value': 'c6bd67ae1e7e9d9c5d8e89812725e15252291869366ebf77822dc9dffb58364d'
+	    };
+
+        OFPlugin.cert.getSignDetached(onCallback, param);
+    }
+
     function callCardList() {
         OFPlugin.Utils.callCardList(onCallback);
     }
@@ -115,6 +127,9 @@
     <br>
     <br>
     <a href="" onclick="getSign();return false;">getSign</a>
+    <br>
+    <br>
+    <a href="" onclick="getSignDetached();return false;">getSignDetached</a>
     <br>
     <br>
     <a href="" onclick="callCardList();return false;">callCardList</a>
