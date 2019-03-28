@@ -86,11 +86,22 @@
         OFPlugin.Utils.callCardList(onCallback);
     }
 
+    function setStatusBarColor() {
+        var param = {
+		    'rgb': '3d5119'
+        };
+        
+        OFPlugin.menu.setStatusBarColor(param);
+    }
+
+    
+
+
     </script>
    
    
 </head>
-<body>
+<body onload="setStatusBarColor();">
     <a href="" onclick="getList();return false;">getList</a>
     <br>
     <br>

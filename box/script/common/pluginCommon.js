@@ -691,6 +691,17 @@ OFPlugin.menu.callGNB = function(callback, params, singleton, callerID) {
 	OF.exec(callback, "OFIBKNavigator", "callGNB", callerID, singleton, params);
 }
 
+OFPlugin.menu.setStatusBarColor = function(callback, params, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFIBKNavigator", "setStatusBarColor", callerID, singleton, params);
+}
+
 OFPlugin.menu.callToolbar = function(callback, params, singleton, callerID) {
 	if (isEmptyValue(callerID)) {
 		callerID = 0;
