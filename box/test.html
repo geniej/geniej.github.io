@@ -106,7 +106,19 @@
         OFPlugin.menu.setStatusBarColor(onCallback, param);
     }
 
-    
+  
+    function resetPassword() {
+        OFPlugin.Utils.resetPassword(onCallback);
+    }
+  
+    function joinMember() {
+        OFPlugin.Utils.joinMember(onCallback);
+    }
+  
+    function findId() {
+        OFPlugin.Utils.findId(onCallback);
+    }
+   
 
 
     </script>
@@ -138,13 +150,13 @@
     <a href="login.html">login</a>
     <br>
     <br>
-    <a href="join.html">join</a>
+    <a href="" onclick="joinMember();return false;">joinMember</a>
     <br>
     <br>
-    <a href="findId.html">findId</a>
+    <a href="" onclick="findId();return false;">findId</a>
     <br>
     <br>
-    <a href="resetPassword.html">resetPassword</a>
+    <a href="" onclick="resetPassword();return false;">resetPassword</a>
 
 
 </body>

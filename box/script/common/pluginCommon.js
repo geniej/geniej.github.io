@@ -702,17 +702,6 @@ OFPlugin.menu.callGNB = function(callback, params, singleton, callerID) {
 	OF.exec(callback, "OFIBKNavigator", "callGNB", callerID, singleton, params);
 }
 
-OFPlugin.menu.setStatusBarColor = function(callback, params, singleton, callerID) {
-	if (isEmptyValue(callerID)) {
-		callerID = 0;
-	}
-	if (isEmptyValue(singleton)) {
-		singleton = false;
-	}
-
-	OF.exec(callback, "OFIBKNavigator", "setStatusBarColor", callerID, singleton, params);
-}
-
 OFPlugin.menu.callToolbar = function(callback, params, singleton, callerID) {
 	if (isEmptyValue(callerID)) {
 		callerID = 0;
@@ -735,11 +724,49 @@ OFPlugin.menu.setToolbar = function(callback, params, singleton, callerID) {
 	OF.exec(callback, "OFIBKToolbar", "setToolbar", callerID, singleton, params);
 }
 
+
+
+
+
+
+
+
+/**
+ * sign detached
+ */
+OFPlugin.cert.getSignDetached = function(callback, params, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFCertCenter", "getSignDetached", callerID, singleton, params);
+}
+
+/**
+ * status bar 칼라 지정
+ */
+OFPlugin.menu.setStatusBarColor = function(callback, params, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFIBKNavigator", "setStatusBarColor", callerID, singleton, params);
+}
+
 /**
  * ibk util
  */
 OFPlugin.Utils = {};
 
+/**
+ * 카드 리스트
+ */
 OFPlugin.Utils.callCardList = function(callback, singleton, callerID) {
 	if (isEmptyValue(callerID)) {
 		callerID = 0;
@@ -749,4 +776,46 @@ OFPlugin.Utils.callCardList = function(callback, singleton, callerID) {
 	}
 
 	OF.exec(callback, "OFIBKUtil", "callCardList", callerID, singleton, {});
+}
+
+/**
+ * 비밀번호 변경
+ */
+OFPlugin.Utils.resetPassword = function(callback, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFIBKUtil", "resetPassword", callerID, singleton, {});
+}
+
+/**
+ * 회원 가입
+ */
+OFPlugin.Utils.joinMember = function(callback, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFIBKUtil", "joinMember", callerID, singleton, {});
+}
+
+/**
+ * 아이디 찾기
+ */
+OFPlugin.Utils.findId = function(callback, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFIBKUtil", "findId", callerID, singleton, {});
 }
