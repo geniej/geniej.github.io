@@ -126,13 +126,21 @@
         OFPlugin.Utils.findId(onCallback);
     }
  
+    /*
+    * 콜백 함수
+    */
+    onFileDownloadCallback = function(result) {
+        console.log("onCallback = " + JSON.stringify(result));
+        console.log("onCallback = " + JSON.stringify(result.result));   
+    };
+
     function fileDownload() {
         var param = {
             'url': 'https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE29xUE',
             'name' : 'test.pptx'
         };
 
-        OFPlugin.Utils.fileDownload(onCallback, param);
+        OFPlugin.Utils.fileDownload(onFileDownloadCallback, param);
     }
 
 
