@@ -819,3 +819,30 @@ OFPlugin.Utils.findId = function(callback, singleton, callerID) {
 
 	OF.exec(callback, "OFIBKUtil", "findId", callerID, singleton, {});
 }
+
+/**
+ * 파일 다운로드
+ */
+OFPlugin.Utils.fileDownload = function(callback, params, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFIBKUtil", "fileDownload", callerID, singleton, params);
+}
+
+
+
+OFPlugin.auth.getLoaded = function(callback, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFIBKLogin", "getLoaded", callerID, singleton, {});
+}

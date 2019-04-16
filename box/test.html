@@ -71,6 +71,13 @@
     }
 
     /*
+    * 콜백 함수
+    */
+    onCallback = function(result) {
+        alert("onCallback = " + JSON.stringify(result));
+    };
+
+    /*
     * 서명
     */
     function getSign() {
@@ -118,7 +125,15 @@
     function findId() {
         OFPlugin.Utils.findId(onCallback);
     }
-   
+ 
+    function fileDownload() {
+        var param = {
+            'url': 'https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE29xUE',
+            'name' : 'test.pptx'
+        };
+
+        OFPlugin.Utils.fileDownload(onCallback, param);
+    }
 
 
     </script>
@@ -157,6 +172,9 @@
     <br>
     <br>
     <a href="" onclick="resetPassword();return false;">resetPassword</a>
+    <br>
+    <br>
+    <a href="" onclick="fileDownload();return false;">file download</a>
 
 
 </body>
