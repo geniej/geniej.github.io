@@ -154,6 +154,13 @@
     }
 
 
+    /*
+    * 인증정보 가져오기
+    */
+    function getLoaded() {
+        OFPlugin.auth.getLoaded(onCallback);
+    }
+
     </script>
    
    
@@ -196,6 +203,9 @@
     <br>
     <br>
     <a href="" onclick="getImages();return false;">getImages</a>
+    <br>
+    <br>
+    <a href="" onclick="getLoaded();return false;">getLoaded</a>
 
 
 </body>

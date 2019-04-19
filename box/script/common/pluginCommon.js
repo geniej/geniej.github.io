@@ -834,6 +834,19 @@ OFPlugin.Utils.fileDownload = function(callback, params, singleton, callerID) {
 	OF.exec(callback, "OFIBKUtil", "fileDownload", callerID, singleton, params);
 }
 
+/**
+ * 핸드폰 본인인증 성공여부 
+ */
+OFPlugin.Utils.callbackHpAuthorize = function(callback, params, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFIBKUtil", "CallbackHpAuthorize", callerID, singleton, params);
+}
 
 
 OFPlugin.auth.getLoaded = function(callback, singleton, callerID) {
