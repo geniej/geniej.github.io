@@ -859,3 +859,15 @@ OFPlugin.auth.getLoaded = function(callback, singleton, callerID) {
 
 	OF.exec(callback, "OFIBKLogin", "getLoaded", callerID, singleton, {});
 }
+
+
+OFPlugin.Utils.goPage = function(callback, params, singleton, callerID) {
+	if (isEmptyValue(callerID)) {
+		callerID = 0;
+	}
+	if (isEmptyValue(singleton)) {
+		singleton = false;
+	}
+
+	OF.exec(callback, "OFIBKUtil", "goPage", callerID, singleton, params);
+}

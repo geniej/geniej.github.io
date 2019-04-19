@@ -161,6 +161,15 @@
         OFPlugin.auth.getLoaded(onCallback);
     }
 
+
+    function goPage(type) {
+        var param = {
+            'type': type
+        };
+
+        OFPlugin.Utils.goPage(onCallback, param);
+    }
+
     </script>
    
    
@@ -206,6 +215,9 @@
     <br>
     <br>
     <a href="" onclick="getLoaded();return false;">getLoaded</a>
+    <br>
+    <br>
+    <a href="" onclick="goPage('1');return false;">goPage('1')</a>
 
 
 </body>
