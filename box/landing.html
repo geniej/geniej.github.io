@@ -11,7 +11,7 @@
         let isANDROID = (userAgent.match('Android') != null);
 
         let IOS_MARKET_URL = "http://itunes.apple.com/kr/app/id393499958?mt=8";
-        let ANDROID_MARKET_URL = "https://play.google.com/store/apps/details?id=com.ibk.boxplatform";
+        let ANDROID_MARKET_URL = "https://play.google.com/store/apps/details?id=com.ibk.boxplatform.dev";
 
         function executeApp() {
             if (isIPHONE || isIPAD) {
@@ -28,7 +28,7 @@
                 }, 0);
             } else if (isANDROID) {
                 if (userAgent.match(/Chrome/)) {
-                    location.href="Intent://box#Intent;scheme=ibk;package=com.ibk.boxplatform;end";
+                    location.href="Intent://box#Intent;scheme=ibk;package=com.ibk.boxplatform.dev;end";
                 } else {
                     // 크롬 이외의 브라우저들(분기 태우는게 맞는건지 모르겠음)
                     setTimeout(function() {
