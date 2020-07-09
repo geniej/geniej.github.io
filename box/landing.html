@@ -27,22 +27,22 @@
                     location.href = "{커스텀 스킴 주소}";
                 }, 0);
             } else if (isANDROID) {
-                if (userAgent.match(/Chrome/)) {
+                // if (userAgent.match(/Chrome/)) {
                     location.href="Intent://box#Intent;scheme=boxplatform;package=com.ibk.boxplatform;end";
-                } else {
-                    // 크롬 이외의 브라우저들(분기 태우는게 맞는건지 모르겠음)
-                    setTimeout(function() {
-                        if ((new Date()).getTime() - visitedAt < 2000) {
-                            location.href = ANDROID_MARKET_URL;
-                        }
-                    }, 500);
+                // } else {
+                //     // 크롬 이외의 브라우저들(분기 태우는게 맞는건지 모르겠음)
+                //     setTimeout(function() {
+                //         if ((new Date()).getTime() - visitedAt < 2000) {
+                //             location.href = ANDROID_MARKET_URL;
+                //         }
+                //     }, 500);
 
-                    var iframe = document.createElement('iframe');
-                    iframe.style.visibility = 'hidden';
-                    iframe.src = 'ibk://box';
-                    document.body.appendChild(iframe);
-                    document.body.removeChild(iframe); // back 호출시 캐싱될 수 있으므로 제거
-                }
+                //     var iframe = document.createElement('iframe');
+                //     iframe.style.visibility = 'hidden';
+                //     iframe.src = 'ibk://boxplatform';
+                //     document.body.appendChild(iframe);
+                //     document.body.removeChild(iframe); // back 호출시 캐싱될 수 있으므로 제거
+                // }
             }
         }
 
