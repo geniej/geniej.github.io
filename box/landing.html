@@ -15,6 +15,10 @@
 
         function executeApp() {
             if (isIPHONE || isIPAD) {
+                // setTimeout(function() { 
+                    location.href = "boxplatform://box?boxId=S0001";
+                // }, 0);
+
                 let visitedAt = (new Date()).getTime(); // 방문 시간
 
                 setTimeout(function() {
@@ -22,10 +26,6 @@
                         location.href = IOS_MARKET_URL;
                     }
                 }, 1500);
-
-                setTimeout(function() { 
-                    location.href = "boxplatform://box?boxId=S0001";
-                }, 0);
             } else if (isANDROID) {
                 location.href="Intent://box#Intent;scheme=boxplatform;package=com.ibk.boxplatform;end";
             }
