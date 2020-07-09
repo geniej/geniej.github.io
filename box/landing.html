@@ -13,7 +13,7 @@
         let IOS_MARKET_URL = "http://itunes.apple.com/kr/app/id1473421650?mt=8";
         // let ANDROID_MARKET_URL = "https://play.google.com/store/apps/details?id=com.ibk.boxplatform";
 
-        window.onload = function() {
+        function executeApp() {
             if (isIPHONE || isIPAD) {
                 // setTimeout(function() { 
                     window.location = "boxplatform://box?boxId=S0001";
@@ -24,6 +24,9 @@
                 setTimeout(function() {
                     if ((new Date()).getTime() - visitedAt < 2000) {
                         window.location = IOS_MARKET_URL;
+                    } else {
+                        window.open('', '_self', '');
+                        window.close();
                     }
                 }, 1500);
             } else if (isANDROID) {
