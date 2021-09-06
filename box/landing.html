@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+        let userAgent = navigator.userAgent;
+
+        let isIPHONE = (userAgent.match('iPhone') != null || userAgent.match('iPod') != null);
+        let isIPAD = (userAgent.match('iPad') != null);
+        let isANDROID = (userAgent.match('Android') != null);
+
+        let IOS_MARKET_URL = "http://itunes.apple.com/kr/app/id1473421650?mt=8";
+        // let ANDROID_MARKET_URL = "https://play.google.com/store/apps/details?id=com.ibk.boxplatform";
+
+        function executeApp() {
+            if (isIPHONE || isIPAD) {
+                window.location.replace("boxplatform://box?boxId=S0001"); 
+                
+                setTimeout(function () {
+                    window.location.replace(IOS_MARKET_URL); 
+                }, 2000);
+            } else if (isANDROID) {
+                window.location = "Intent://box#Intent;scheme=boxplatform;package=com.ibk.boxplatform;end";
+            }
+        }
+
+    </script>
+   
+   
+   
+</head>
+<body onload="executeApp(this.href);return false;">
+    <a href="" onclick="executeApp(this.href);return false;">BOX 앱 실행</a>
+</body>
+
+</html>
